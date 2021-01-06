@@ -10,7 +10,7 @@ namespace CoreApp.Data
         [Required]
         public string PhotoPath { get; set; }
         [Required]
-        public Operation OperationId { get; set; }
+        public Operation Operation { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CoreApp.Data
@@ -8,7 +9,7 @@ namespace CoreApp.Data
         [Key]
         public Guid UnitId { get; set; }
         [Required]
-        public ItemCategory ItemCategoryId { get; set; }
+        public ItemCategory ItemCategory { get; set; }
         [Required]
         public string ItemName { get; set; }
         public string ItemDescription { get; set; }
@@ -20,7 +21,6 @@ namespace CoreApp.Data
         public string CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public string UpdatedBy { get; set; }
-
-
+        public ICollection<Item> Items { get; set; }
     }
 }

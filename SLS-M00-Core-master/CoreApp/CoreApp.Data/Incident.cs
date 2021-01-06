@@ -8,9 +8,10 @@ namespace CoreApp.Data
         [Key]
         public Guid IncidentId{ get; set;}
         [Required]
-        public IncidentType IncidentTypeId{ get; set;}
+        public IncidentType IncidentType{ get; set;}
         [Required]
-        public Operation OperationId{ get; set;}
+        public Operation Operation{ get; set;}
+        public string Remarks { get; set; }
         [Required]
         public bool IsActive{ get; set;}
         [Required]

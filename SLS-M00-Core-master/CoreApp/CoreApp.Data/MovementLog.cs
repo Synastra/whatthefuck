@@ -8,7 +8,7 @@ namespace CoreApp.Data
         [Key]
         public Guid MovementLogId { get; set; }
         [Required]
-        public Cargo CargoId { get; set; }
+        public Cargo Cargo { get; set; }
         [Required]
         public DateTime TimeStamp { get; set; }
         [Required]

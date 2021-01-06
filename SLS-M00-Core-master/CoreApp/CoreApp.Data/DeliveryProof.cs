@@ -1,15 +1,16 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreApp.Data 
 {
     public class DeliveryProof
     {
+        [ForeignKey("Delivery")]
         [Key]
         public Guid DeliveryProofId { get; set; }
-
         [Required]
-        public Delivery DeliveryId { get; set; }
+        public virtual Delivery Delivery { get; set; }
         [Required]
         public string DeliverySignature { get; set; }
         [Required]

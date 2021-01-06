@@ -1,10 +1,13 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreApp.Data
 {
     public class Device
     {
+        [ForeignKey("Compartment")]
         [Key]
         public Guid DeviceId { get; set; }
         [Required]
@@ -18,7 +21,7 @@ namespace CoreApp.Data
         [Required]
         public string MacAddress { get; set; }
         [Required]
-        public Compartment CompartmentId { get; set; }
+        public virtual Compartment Compartment { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]
@@ -27,5 +30,6 @@ namespace CoreApp.Data
         public string CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public string UpdatedBy { get; set; }
+        public ICollection<Record> Records { get; set; }
     }
 }

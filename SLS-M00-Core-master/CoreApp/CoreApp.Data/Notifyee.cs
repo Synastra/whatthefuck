@@ -8,9 +8,9 @@ namespace CoreApp.Data
         [Key]
         public Guid NotifyeeId { get; set; }
         [Required]
-        public Compartment CompartmentId { get; set; }
+        public Compartment Compartment { get; set; }
         [Required]
-        public Role RoleId { get; set; }
+        public Role Role { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]

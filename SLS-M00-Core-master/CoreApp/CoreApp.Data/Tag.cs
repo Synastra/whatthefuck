@@ -1,21 +1,23 @@
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreApp.Data
 {
-    public class Shipment
-    {
-        [ForeignKey("Operation")]
+    public class Tag
+    {   
         [Key]
-        public Guid ShipmentId { get; set; }
+        public string TagId { get; set; }
         [Required]
-        public ShipmentType ShipmentType { get; set; }
+        public bool IsForklift { get; set; }
         [Required]
-        public virtual Operation Operation { get; set; }
-        [Required]
-        public string DisplayValue { get; set; }
+        public bool IsAssigned { get; set; }
+        [ForeignKey("Forklift")]
+        public Nullable<Guid> ForkliftForeignId { get; set; }
+        public virtual Forklift Forklift { get; set; }
+        [ForeignKey("Cargo")]
+        public Nullable<Guid> CargoForeignId { get; set; }
+        public virtual Cargo Cargo { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]
@@ -24,7 +26,6 @@ namespace CoreApp.Data
         public string CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public string UpdatedBy { get; set; }
-        public ICollection<Delivery> Deliveries { get; set; }
-        public ICollection<ShipmentContainer> ShipmentContainers { get; set; }
+
     }
 }

@@ -1,10 +1,12 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreApp.Data
 {
     public class BillingAddress
     {
+        [ForeignKey("User")]
         [Key]
         public Guid BillingId { get; set; }
         [Required]
@@ -32,7 +34,7 @@ namespace CoreApp.Data
         [Required]
         public bool IsActive { get; set; }
         [Required]
-        public User UserId { get; set; }
+        public virtual User User { get; set; }
         [Required]
         public DateTime CreatedDate { get; set; }
         [Required]

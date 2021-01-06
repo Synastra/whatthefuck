@@ -1,10 +1,12 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreApp.Data 
 {
     public class DeliveryNote
     {
+        [ForeignKey("Delivery")]
         [Key]
         public Guid DeliveryNoteId { get; set; }
         [Required]
@@ -28,7 +30,7 @@ namespace CoreApp.Data
         [Required]
         public bool IsActive { get; set; }
         [Required]
-        public Delivery DeliveryId { get; set; }
+        public virtual Delivery Delivery { get; set; }
         [Required]
         public DateTime CreatedDate { get; set; }
         [Required]

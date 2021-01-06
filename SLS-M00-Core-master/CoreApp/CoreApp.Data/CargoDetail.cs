@@ -1,14 +1,20 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreApp.Data
 {
     public class CargoDetail
     {
+        [ForeignKey("Cargo")]
         [Key]
         public Guid CargoDetailId { get; set; }
         [Required]
+        public virtual Cargo Cargo { get; set; }
+        [Required]
         public string CargoName { get; set; }
+        [Required]
+        public string MarksAndNumbers { get; set; }
         [Required]
         public string Remarks { get; set; }
         [Required]

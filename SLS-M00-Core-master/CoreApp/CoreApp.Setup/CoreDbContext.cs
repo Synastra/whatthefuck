@@ -1,5 +1,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using CoreApp.Data;
 using System.Reflection;
 
@@ -47,6 +48,7 @@ namespace CoreApp.Setup
         public DbSet<Shipment> Shipments { get; set; }
         public DbSet<ShipmentContainer> ShipmentContainers { get; set; }
         public DbSet<ShipmentType> ShipmentTypes { get; set; }
+        public DbSet<Tag> Tags { get; set; }
         public DbSet<Task> Tasks { get; set; }
         public DbSet<Origin> Origins { get; set; }
         public DbSet<Operation> Operations { get; set; }
@@ -62,10 +64,9 @@ namespace CoreApp.Setup
         public DbSet<Department> Departments { get; set; }
         public DbSet<ItemCategory> ItemCategories { get; set; }
         //end
-        public DbSet<CoreApp.Data.Exception> Exceptions { get; set; }
+        public DbSet<WarehouseException> WarehouseExceptions { get; set; }
         
         // T12 DbSets
-        public DbSet<BillOfLading> BillOfLadings { get; set; }
         public DbSet<CargoCategory> CargoCategories { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Delivery> Deliveries { get; set; }
@@ -91,9 +92,14 @@ namespace CoreApp.Setup
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=../CoreDatabase.db", options =>
+            //optionsBuilder.UseSqlite("Filename=../CoreDatabase.db", options =>
+            //{
+            //    options.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName);
+            //});
+            string connectionString = $"Host=localhost;Username=postgres;Password=admin;Database=testdb;";
+            optionsBuilder.UseNpgsql(connectionString, option =>
             {
-                options.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName);
+                option.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName);
             });
             base.OnConfiguring(optionsBuilder);
         }
@@ -106,7 +112,6 @@ namespace CoreApp.Setup
             modelBuilder.Entity<Rule>().ToTable("Rules");
             modelBuilder.Entity<Attachment>().ToTable("Attachments");
             modelBuilder.Entity<BillingAddress>().ToTable("BillingAddresses");
-            modelBuilder.Entity<BillOfLading>().ToTable("BillOfLadings");
             modelBuilder.Entity<Cargo>().ToTable("Cargoes");
             modelBuilder.Entity<CargoDetail>().ToTable("CargoDetails");
             modelBuilder.Entity<Container>().ToTable("Containers");
@@ -142,6 +147,7 @@ namespace CoreApp.Setup
             modelBuilder.Entity<Shipment>().ToTable("Shipments");
             modelBuilder.Entity<ShipmentContainer>().ToTable("ShipmentContainers");
             modelBuilder.Entity<ShipmentType>().ToTable("ShipmentTypes");
+            modelBuilder.Entity<Tag>().ToTable("Tags");
             modelBuilder.Entity<Task>().ToTable("Tasks");
             modelBuilder.Entity<MovementLog>().ToTable("MovementLogs");
             modelBuilder.Entity<Origin>().ToTable("Origins");
@@ -160,7 +166,7 @@ namespace CoreApp.Setup
             //end 
       
 
-            modelBuilder.Entity<CoreApp.Data.Exception>().ToTable("Exceptions");
+            modelBuilder.Entity<WarehouseException>().ToTable("WarehouseExceptions");
             
             //T12 Models
             modelBuilder.Entity<Delivery>().ToTable("Deliveries");
@@ -181,6 +187,7 @@ namespace CoreApp.Setup
             modelBuilder.Entity<PublicHoliday>().ToTable("PublicHolidays");
             //Workflow Models
             modelBuilder.Entity<OperationPhoto>().ToTable("OperationPhotos");
+            modelBuilder.Seed();
         }
     }
 }

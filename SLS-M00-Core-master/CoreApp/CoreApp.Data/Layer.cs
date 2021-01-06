@@ -8,7 +8,7 @@ namespace CoreApp.Data
         [Key]
         public Guid LayerId { get; set; }
         [Required]
-        public Rack RackId { get; set; }
+        public Rack Rack { get; set; }
         [Required]
         public int LayerLevelNo { get; set; }
         [Required]

@@ -8,6 +8,7 @@ namespace CoreApp.Data {
         public Guid ForkliftId { get; set; }
 	    [Required]
         public string ForkliftName { get; set; }
+        public virtual Tag Tag { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]

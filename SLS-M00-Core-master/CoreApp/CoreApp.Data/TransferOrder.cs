@@ -1,10 +1,12 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreApp.Data
 {
     public class TransferOrder
     {
+        [ForeignKey("Transfer")]
         [Key]
         public Guid TransferOrderId { get; set; }
         [Required]
@@ -13,7 +15,7 @@ namespace CoreApp.Data
         public Warehouse Origin { get; set; }
         public string Remarks { get; set; }
         [Required]
-        public Transfer Transfer { get; set; }
+        public virtual Transfer Transfer { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]

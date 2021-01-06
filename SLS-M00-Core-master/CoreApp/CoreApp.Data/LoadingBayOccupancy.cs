@@ -8,7 +8,7 @@ namespace CoreApp.Data
         [Key]
         public int LoadingBayOccupancyID { get; set; }
         [Required]
-        public LoadingBay LoadingBayId { get; set; }
+        public LoadingBay LoadingBay { get; set; }
         [Required]
         public string DisplayValue { get; set; }
         [Required]

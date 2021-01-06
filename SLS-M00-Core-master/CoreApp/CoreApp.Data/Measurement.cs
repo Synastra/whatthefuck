@@ -1,12 +1,16 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreApp.Data
 {
     public class Measurement
     {
+        [ForeignKey("Cargo")]
         [Key]
         public Guid MeasurementId { get; set; }
+        [Required]
+        public virtual Cargo Cargo { get; set; }
         public bool IsMeasured { get; set; }
         public string Length { get; set; }
         public string Width { get; set; }
@@ -15,7 +19,7 @@ namespace CoreApp.Data
         public byte[] MeasurementImage { get; set; }
         public DateTime MeasurementTime { get; set; }
         [Required]
-        public Platform PlatformId { get; set; }
+        public Platform Platform { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]

@@ -8,9 +8,9 @@ namespace CoreApp.Data
         [Key]
         public Guid CargoCategoryId { get; set; }
         [Required]
-        public Cargo CargoId { get; set; }
+        public Cargo Cargo { get; set; }
         [Required]
-        public Category CategoryId { get; set; }
+        public Category Category { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]

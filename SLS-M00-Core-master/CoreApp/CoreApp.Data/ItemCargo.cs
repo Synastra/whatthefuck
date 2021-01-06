@@ -5,13 +5,15 @@ namespace CoreApp.Data {
     public class ItemCargo
     {
         [Key]
-        public int ItemCargoId { get; set; }
+        public Guid ItemCargoId { get; set; }
         [Required]
-        public Cargo CargoId { get; set; }
+        public Cargo Cargo { get; set; }
         [Required]
-        public Item ItemId { get; set; }
+        public Item Item { get; set; }
         [Required]
         public int Quantity { get; set; }
+        [Required]
+        public double Weight { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]

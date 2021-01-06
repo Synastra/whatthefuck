@@ -12,7 +12,7 @@ namespace CoreApp.Data
         [Required]
         public DateTime EstimatedReleasing { get; set; }
         [Required]
-        public Shipment ShipmentId { get; set; }
+        public Shipment Shipment { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]
@@ -21,5 +21,7 @@ namespace CoreApp.Data
         public string CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }      
         public string UpdatedBy { get; set; }
+        public virtual DeliveryNote DeliveryNote { get; set; }
+        public virtual DeliveryProof DeliveryProof { get; set; }
     }
 }

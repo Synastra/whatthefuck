@@ -11,7 +11,7 @@ namespace CoreApp.Data
         public string TransferStatus { get; set; }
         public string TransferAdminRemarks { get; set; }
         [Required]
-        public Location LocationId { get; set; }
+        public Location Location { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]
@@ -20,5 +20,6 @@ namespace CoreApp.Data
         public string CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public string UpdatedBy { get; set; }
+        public virtual TransferOrder TransferOrder { get; set; }
     }
 }

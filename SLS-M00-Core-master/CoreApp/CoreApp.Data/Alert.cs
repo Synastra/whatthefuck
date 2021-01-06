@@ -1,15 +1,17 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreApp.Data {
     public class Alert
     {
+        [ForeignKey("Record")]
         [Key]
         public Guid AlertId { get; set; }
         [Required]
         public string Message { get; set; }
         [Required]
-        public Record RecordId { get; set; }
+        public virtual Record Record { get; set; }
         [Required]
         public string ActionTaken { get; set; }
         [Required]

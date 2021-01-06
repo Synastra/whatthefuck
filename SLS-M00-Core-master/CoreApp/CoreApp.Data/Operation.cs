@@ -1,21 +1,23 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreApp.Data
 {
     public class Operation
     {
+        [ForeignKey("Task")]
         [Key]
         public Guid OperationId { get; set; }
         [Required]
-        public Task TaskId { get; set; }
+        public virtual Task Task { get; set; }
         [Required]
-        public OperationType OperationTypeId { get; set; }
+        public OperationType OperationType { get; set; }
         [Required]
-        public OperationStatus OperationStatusId { get; set; }
-        public Shipment ShipmentId { get; set; }
-        [Required]
-        public User UserId { get; set; }
+        public OperationStatus OperationStatus { get; set; }
+        public virtual Shipment Shipment { get; set; }
+        public User User { get; set; }
         [Required]
         public DateTime CompletionDate { get; set; }
         [Required]
@@ -26,5 +28,10 @@ namespace CoreApp.Data
         public string CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public string UpdatedBy { get; set; }
+        public ICollection<CargoOperation> CargoOperations { get; set; }
+        public ICollection<WarehouseException> WarehouseExceptions { get; set; }
+        public ICollection<Incident> Incidents { get; set; }
+        public ICollection<OperationItem> OperationItems { get; set; }
+        public ICollection<OperationPhoto> OperationPhotos { get; set; }
     }
 }

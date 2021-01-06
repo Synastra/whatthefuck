@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreApp.Data
 {
@@ -11,7 +13,7 @@ namespace CoreApp.Data
         [Required]
         public string LocationStatus { get; set; }
         [Required]
-        public LayoutObject LayoutObjId { get; set; }
+        public virtual LayoutObject LayoutObj { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]
@@ -20,5 +22,7 @@ namespace CoreApp.Data
         public string CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public string UpdatedBy { get; set; }
+        public ICollection<Cargo> Cargoes { get; set; }
+        public ICollection<Transfer> Transfers { get; set; }
     }
 }

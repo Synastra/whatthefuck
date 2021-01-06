@@ -1,17 +1,21 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreApp.Data
 {
     public class LayoutObject
     {
+        [ForeignKey("Location")]
         [Key]
         public Guid LayoutObjId { get; set; }
         [Required]
-        public Layout LayoutId { get; set; }
-        public Lot LotId { get; set; }
-        public Rack RackId { get; set; }
-        public Restricted RestrictedId { get; set; }
+        public Layout Layout { get; set; }
+        [Required]
+        public virtual Location Location { get; set; }
+        public virtual Lot Lot { get; set; }
+        public Rack Rack { get; set; }
+        public virtual Restricted Restricted { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]
@@ -20,5 +24,6 @@ namespace CoreApp.Data
         public string CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public string UpdatedBy { get; set; }
+        
     }
 }

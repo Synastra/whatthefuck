@@ -8,13 +8,13 @@ namespace CoreApp.Data
         [Key]
         public Guid ChargeId { get; set; }
         [Required]
-        public ChargeType ChargeTypeId { get; set; }
+        public ChargeType ChargeType { get; set; }
         [Required]
-        public Booking BookingId { get; set; }
+        public Booking Booking { get; set; }
         [Required]
         public double Cost { get; set; }
         [Required]
-        public ChargeStatus ChargeStatusId { get; set; }
+        public ChargeStatus ChargeStatus { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]

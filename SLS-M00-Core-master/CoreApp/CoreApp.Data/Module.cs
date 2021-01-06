@@ -8,7 +8,7 @@ namespace CoreApp.Data
         [Key]
         public Guid ModuleId { get; set; }
         [Required]
-        public Warehouse WarehouseId { get; set; }
+        public Warehouse Warehouse { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]
@@ -17,5 +17,6 @@ namespace CoreApp.Data
         public string CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public string UpdatedBy { get; set; }
+        public virtual Layout Layout { get; set; }
     }
 }

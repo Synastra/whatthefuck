@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CoreApp.Data {
@@ -9,13 +10,13 @@ namespace CoreApp.Data {
         [Required]
         public DateTime Expiry { get; set; }
         [Required]
-        public Unit UnitId { get; set; }
+        public Unit Unit { get; set; }
         [Required]
         public string Batch { get; set; }
         [Required]
         public bool IsHazard { get; set; }
         [Required]
-        public Origin OriginId { get; set; }
+        public Origin Origin { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]
@@ -24,6 +25,8 @@ namespace CoreApp.Data {
         public string CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public string UpdatedBy { get; set; }
+        public ICollection<ItemCargo> ItemCargoes { get; set; }
+        public ICollection<OperationItem> OperationItems { get; set; }
 
     }
 }

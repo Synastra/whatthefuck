@@ -1,14 +1,16 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreApp.Data
 {
     public class Transporter
     {
+        [ForeignKey("User")]
         [Key]
         public Guid TransporterId { get; set; }
         [Required]
-        public User UserId { get; set; }
+        public virtual User User { get; set; }
         [Required]
         public string PassNum { get; set; }
         [Required]

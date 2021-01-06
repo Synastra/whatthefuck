@@ -1,23 +1,17 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace CoreApp.Data 
+namespace CoreApp.Data
 {
-    public class OperationItem
+    public class WarehouseException
     {
         [Key]
-        public Guid OperationItemId { get; set; }
+        public Guid WarehouseExceptionId { get; set; }
         [Required]
+        public ExceptionType ExceptionType { get; set; }
         public Operation Operation { get; set; }
-        [Required]
-        public Item Item { get; set; }
-        [Required]
-        public OperationItemStatus OperationItemStatus { get; set; }
-        [Required]
-        public double Weight1 { get; set; }
-        [Required]
-        public double Weight2 { get; set; }
-        public string Comment { get; set; }
+        public Booking Booking { get; set; }
+        public string Remarks { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]

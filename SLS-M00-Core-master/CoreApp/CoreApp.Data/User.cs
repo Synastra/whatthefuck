@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CoreApp.Data
@@ -8,7 +9,7 @@ namespace CoreApp.Data
         [Key]
         public Guid UserId { get; set; }
         [Required]
-        public Role RoleId { get; set; }
+        public Role Role { get; set; }
         [Required]
         public string Password { get; set; }
         [Required]
@@ -24,6 +25,10 @@ namespace CoreApp.Data
         public string Email { get; set; }
         public string Token { get; set; }
         [Required]
+        public bool IsFirstLogin { get; set; }
+        [Required]
+        public bool IsApproved { get; set; }
+        [Required]
         public bool IsActive { get; set; }
         [Required]
         public DateTime CreatedDate { get; set; }
@@ -31,5 +36,11 @@ namespace CoreApp.Data
         public string CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public string UpdatedBy { get; set; }
+
+        public virtual BillingAddress BillingAddress { get; set; }
+        public virtual Client Client { get; set; }
+        public virtual Employee Employee { get; set; }
+        public virtual Transporter Transporter { get; set; }
+        public ICollection<Operation> Operations { get; set; }
     }
 }

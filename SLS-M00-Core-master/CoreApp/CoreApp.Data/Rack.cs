@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CoreApp.Data
@@ -17,5 +18,7 @@ namespace CoreApp.Data
         public string CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public string UpdatedBy { get; set; }
+        public ICollection<LayoutObject> LayoutObjects { get; set; }
+        public ICollection<Layer> Layers { get; set; }
     }
 }

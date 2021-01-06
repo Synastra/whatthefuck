@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CoreApp.Data
@@ -8,7 +9,7 @@ namespace CoreApp.Data
         [Key]
         public Guid RecordId { get; set; }
         [Required]
-        public Device DeviceId { get; set; }
+        public Device Device { get; set; }
         [Required]
         public float Temperature { get; set; }
         [Required]
@@ -27,5 +28,6 @@ namespace CoreApp.Data
         public string CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public string UpdatedBy { get; set; }
+        public virtual Alert Alert { get; set; }
     }
 }

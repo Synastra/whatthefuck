@@ -6,11 +6,11 @@ namespace CoreApp.Data
     public class ShipmentContainer
     {
         [Key]
-        public int ShipmentContainerId { get; set; }
+        public Guid ShipmentContainerId { get; set; }
         [Required]
-        public Shipment ShipmentId { get; set; }
+        public Shipment Shipment { get; set; }
         [Required]
-        public Container ContainerId { get; set; }
+        public Container Container { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]

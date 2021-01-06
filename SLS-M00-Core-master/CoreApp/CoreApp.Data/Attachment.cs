@@ -12,7 +12,7 @@ namespace CoreApp.Data
         [Required]
         public string FileName { get; set; }
         [Required]
-        public Cargo CargoId { get; set; }
+        public Cargo Cargo { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]

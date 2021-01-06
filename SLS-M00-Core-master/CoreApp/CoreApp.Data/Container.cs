@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CoreApp.Data
@@ -25,11 +26,12 @@ namespace CoreApp.Data
         public DateTime ArrivalTime { get; set; }
         public DateTime DepartureTime { get; set; }
         [Required]
-        public LoadingBay LoadingBayId { get; set; }
+        public LoadingBay LoadingBay { get; set; }
         public DateTime CreatedDate { get; set; }
         [Required]
         public string CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public string UpdatedBy { get; set; }
+        public ICollection<ShipmentContainer> ShipmentContainers { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CoreApp.Data
@@ -8,13 +9,14 @@ namespace CoreApp.Data
         [Key]
         public Guid CargoId { get; set; }
         [Required]
-        public CargoDetail CargoDetailId { get; set; }
+        public virtual CargoDetail CargoDetail { get; set; }
         [Required]
-        public Measurement MeasurementId { get; set; }
+        public virtual Measurement Measurement { get; set; }
         [Required]
-        public PackagingType PackagingTypeId { get; set; }
+        public PackagingType PackagingType { get; set; }
         [Required]
-        public Location LocationId { get; set; }
+        public Location Location { get; set; }
+        public virtual Tag Tag { get; set; }
         [Required]
         public bool IsActive { get; set; }
         [Required]
@@ -23,5 +25,12 @@ namespace CoreApp.Data
         public string CreatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public string UpdatedBy { get; set; }
+
+        public ICollection<Attachment> Attachments { get; set; }
+        public ICollection<CargoCategory> CargoCategories { get; set; }
+        public ICollection<CargoOperation> CargoOperations { get; set; }
+        public ICollection<ItemCargo> ItemCargoes { get; set; }
+        public ICollection<MarkingCargo> MarkingCargoes { get; set; }
+        public ICollection<MovementLog> MovementLogs { get; set; }
     }
 }
