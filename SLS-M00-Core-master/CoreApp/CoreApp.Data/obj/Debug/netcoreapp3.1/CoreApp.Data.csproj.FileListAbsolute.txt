@@ -1,0 +1,9 @@
+C:\Users\User\Desktop\SLS-M00-Core-master\CoreApp\CoreApp.Data\bin\Debug\netcoreapp3.1\CoreApp.Data.deps.json
+C:\Users\User\Desktop\SLS-M00-Core-master\CoreApp\CoreApp.Data\bin\Debug\netcoreapp3.1\CoreApp.Data.dll
+C:\Users\User\Desktop\SLS-M00-Core-master\CoreApp\CoreApp.Data\bin\Debug\netcoreapp3.1\CoreApp.Data.pdb
+C:\Users\User\Desktop\SLS-M00-Core-master\CoreApp\CoreApp.Data\obj\Debug\netcoreapp3.1\CoreApp.Data.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\SLS-M00-Core-master\CoreApp\CoreApp.Data\obj\Debug\netcoreapp3.1\CoreApp.Data.AssemblyInfo.cs
+C:\Users\User\Desktop\SLS-M00-Core-master\CoreApp\CoreApp.Data\obj\Debug\netcoreapp3.1\CoreApp.Data.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\SLS-M00-Core-master\CoreApp\CoreApp.Data\obj\Debug\netcoreapp3.1\CoreApp.Data.dll
+C:\Users\User\Desktop\SLS-M00-Core-master\CoreApp\CoreApp.Data\obj\Debug\netcoreapp3.1\CoreApp.Data.pdb
+C:\Users\User\Desktop\SLS-M00-Core-master\CoreApp\CoreApp.Data\obj\Debug\netcoreapp3.1\CoreApp.Data.csprojAssemblyReference.cache
